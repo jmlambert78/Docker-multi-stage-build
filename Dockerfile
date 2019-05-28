@@ -11,7 +11,7 @@ RUN set -x && \
 # Docker run Golang app
 FROM scratch
 LABEL maintainer "Vincent RABAH <vincent.rabah@gmail.com>"
-
+ENV GOPATH=/go
 WORKDIR /root/
 COPY --from=builder ${GOPATH}/src/github.com/user/app .
 CMD ["./app"]  
